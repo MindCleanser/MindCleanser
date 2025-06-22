@@ -1,0 +1,9 @@
+{
+    "token":"<your token here>",
+    "invite": "https://discord.com/oauth2/authorize?client_id=<your app id here>&permissions=0&integration_type=0&scope=bot+applications.commands",
+    "discinv":"https://discord.gg/hyyMnz3enE",
+    "trevorprojweb":"https://www.thetrevorproject.org/",
+    "trevorprojnum":"+1 (866)-488-7386",
+    "trevorprojthumb":"https://imgs.search.brave.com/x3he7nTOEIjhOvV4cKxlE7C0M8Xsh_-P33Vy3IBoZgQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2xn/YnRxaWEtc2FuZGJv/eC9pbWFnZXMvZC9k/ZC9UaGVUcmV2b3JQ/cm9qZWN0LnBuZy9y/ZXZpc2lvbi9sYXRl/c3Qvc2NhbGUtdG8t/d2lkdGgtZG93bi8y/Njg_Y2I9MjAyMjAx/MTgyMTQxMzM",
+    "github":"https://github.com/MindCleanser/MindCleanser"
+}

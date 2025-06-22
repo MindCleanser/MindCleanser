@@ -58,7 +58,3 @@ module.exports = {
 
     }
 }
-
-/*const embed = new EmbedBuilder()
-      .setTitle("Bot invite")
-      .setDescription("Click the button bellow to join the bot server to report bugs and suggest resources (This is NOT a mental health support server)")*/
