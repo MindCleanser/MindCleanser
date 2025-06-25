@@ -24,9 +24,12 @@ module.exports = {
       const row = new ActionRowBuilder()
       .addComponents(button)
 
+      
+
       const embed = new EmbedBuilder()
       .setTitle("Click to join")
-      .setDescription("Click the button bellow to join the bot server to report bugs and suggest resources (This is NOT a mental health support server)")
+      .setDescription("Click the button bellow to join the bot server to report bugs and suggest resources as well as get notified about bot updates and downtime (This is NOT a mental health support server)")
+      
 
     if (hide == false) {
            const reply = interaction.reply({

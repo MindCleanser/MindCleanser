@@ -24,10 +24,12 @@ module.exports = {
       const row = new ActionRowBuilder()
       .addComponents(button)
 
+     
+
      const embed = new EmbedBuilder()
       .setTitle("Bot invite")
       .setDescription("Click the button bellow to invite me to your server!")
-
+      
     if (hide == false) {
            const reply = interaction.reply({
         withResponse: true,

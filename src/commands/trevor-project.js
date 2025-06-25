@@ -2,7 +2,7 @@ const { EmbedBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
-const { trevorprojweb, trevorprojnum, trevorprojthumb } =require("../../config.json")
+const { trevorprojweb, trevorprojnum, trevorprojthumb, trevorprojdonate, trevorprojresources } =require("../../config.json")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("trevor-project")
@@ -20,17 +20,28 @@ module.exports = {
       .setStyle(ButtonStyle.Link)
       
       .setURL(trevorprojweb)
+
+      const button2 = new ButtonKit()
+      .setLabel("Donate")
+      .setStyle(ButtonStyle.Link)
+      .setURL(trevorprojdonate)
+
+      const button3 = new ButtonKit()
+      .setLabel("Resources")
+      .setStyle(ButtonStyle.Link)
+      .setURL(trevorprojresources)
       
       const row = new ActionRowBuilder()
-      .addComponents(button)
+      .addComponents(button, button2, button3)
 
       const embed = new EmbedBuilder()
         .setTitle("What is The Trevor Project?")
-        .setDescription(`The Trevor Project is a non-profit orginisation focused on supporting members of LGBTQIA+ youth. Their main goal is to prevent suicide amongst young members of the queer community`)
+        .setDescription(`The Trevor Project is a non-profit orginisation focused on supporting members of LGBTQIA+ youth. Their main goal is to prevent suicide amongst young members of the queer community. They also provide resources for LGBTQIA+ youth and their guardians`)
         .setThumbnail(trevorprojthumb)
         .addFields(
-        {name: "Contact information", value:`The Trevor Project offers 24/7 volunteers on call to provide free mental health and suicide prevention. Just call ${trevorprojnum} or visit their website by clicking the button`}
+        {name: "Contact information", value:`The Trevor Project offers 24/7 volunteers on call to provide free mental health and suicide prevention. Just call ${trevorprojnum} or visit their website by clicking The Trevor Project button or donate by clicking Donate`}
         )
+       
 
 
     if (hide == false) {
@@ -52,17 +63,9 @@ module.exports = {
  const message = (await reply).resource.message 
       { message }    
 }
-   
-          
-
-
-
-      
-        
-      
 
     }
-}
 
+}
 
 

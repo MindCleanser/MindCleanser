@@ -2,11 +2,11 @@ const { EmbedBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
-const { invite } =require("../../config.json")
+const { vote } =require("../../config.json")
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName("github")
-    .setDescription("Sends Github repo")
+    .setName("vote")
+    .setDescription("Vote for us on top.gg")
   .addBooleanOption(option =>
             option.setName("private")
             .setDescription("Can others see this message?")
@@ -16,21 +16,20 @@ module.exports = {
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
       const button = new ButtonKit()
-      .setLabel("Github")
+      .setLabel("Vote")
       .setStyle(ButtonStyle.Link)
       
-      .setURL("https://github.com/MindCleanser/MindCleanser")
+      .setURL(vote)
       
       const row = new ActionRowBuilder()
       .addComponents(button)
 
      
 
-      const embed = new EmbedBuilder()
-      .setTitle("Github")
-      .setDescription("Click the button to view my source code")
+     const embed = new EmbedBuilder()
+      .setTitle("Vote")
+      .setDescription("Click the button bellow to vote for us on top.gg")
       
-
     if (hide == false) {
            const reply = interaction.reply({
         withResponse: true,
@@ -61,3 +60,5 @@ module.exports = {
 
     }
 }
+
+
