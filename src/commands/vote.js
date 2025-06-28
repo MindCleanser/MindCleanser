@@ -2,7 +2,7 @@ const { EmbedBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
-const { vote } =require("../../config.json")
+const { vote, vote2 } =require("../../config.json")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("vote")
@@ -16,13 +16,18 @@ module.exports = {
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
       const button = new ButtonKit()
-      .setLabel("Vote")
+      .setLabel("Vote 1")
       .setStyle(ButtonStyle.Link)
       
       .setURL(vote)
+
+      const button2 = new ButtonKit()
+      .setLabel("Vote 2")
+      .setStyle(ButtonStyle.Link)
+      .setURL(vote2)
       
       const row = new ActionRowBuilder()
-      .addComponents(button)
+      .addComponents(button, button2)
 
      
 
