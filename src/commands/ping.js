@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("@discordjs/builders");
-const { SlashCommandBuilder } = require("discord.js");
+const { SlashCommandBuilder, MessageFlags } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -20,7 +20,16 @@ module.exports = {
             .setDescription(`${latency}ms`)
             .setColor(0x3498db); // Blue color
 
-        await interaction.reply({ embeds: [embed] });
+       if (hide == true) {
+        await interaction.reply({
+            embeds: [embed],
+            flags: MessageFlags.Ephemeral
+        })
+       } else  {
+        await interaction.reply({
+            embeds: [embed]
+        })
+       }
     },
 };
        
