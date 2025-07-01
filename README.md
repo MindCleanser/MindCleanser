@@ -1,6 +1,6 @@
 __MindCleanser__
 
-<div align="center"><img alt="Discord" src="https://img.shields.io/discord/1351528196654497835?style=for-the-badge&logo=Discord&logoColor=white&label=Discord">
+<div align="center"><img alt="Discord" src="https://img.shields.io/discord/1351528196654497835?style=for-the-badge&logo=Discord&logoColor=white&label=Discord&color=5865F2">
 </div>
 MindCleanser is a mental health discord bot that allows users to send mental health resources either to the whole server or to themselves via ephemeral.
 
