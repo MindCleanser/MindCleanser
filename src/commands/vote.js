@@ -6,7 +6,7 @@ const { vote, vote2 } =require("../../config.json")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("vote")
-    .setDescription("Vote for us on top.gg")
+    .setDescription("Vote for us on top.gg and discord bot list")
   .addBooleanOption(option =>
             option.setName("private")
             .setDescription("Can others see this message?")
@@ -16,13 +16,13 @@ module.exports = {
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
       const button = new ButtonKit()
-      .setLabel("Vote 1")
+      .setLabel("Top.gg")
       .setStyle(ButtonStyle.Link)
       
       .setURL(vote)
 
       const button2 = new ButtonKit()
-      .setLabel("Vote 2")
+      .setLabel("DiscordBotList")
       .setStyle(ButtonStyle.Link)
       .setURL(vote2)
       
