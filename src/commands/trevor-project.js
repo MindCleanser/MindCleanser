@@ -2,7 +2,8 @@ const { EmbedBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
-const { trevorprojweb, trevorprojnum, trevorprojthumb, trevorprojdonate, trevorprojresources } =require("../../config.json")
+const { trevorprojweb, trevorprojnum, trevorprojthumb, trevorprojdonate, trevorprojresources } =require("../../config.json");
+const { ButtonBuilder } = require("discord.js");
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("trevor-project")
@@ -15,18 +16,18 @@ module.exports = {
 
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
-      const button = new ButtonKit()
+      const button = new ButtonBuilder()
       .setLabel("The Trevor project")
       .setStyle(ButtonStyle.Link)
       
       .setURL(trevorprojweb)
 
-      const button2 = new ButtonKit()
+      const button2 = new ButtonBuilder()
       .setLabel("Donate")
       .setStyle(ButtonStyle.Link)
       .setURL(trevorprojdonate)
 
-      const button3 = new ButtonKit()
+      const button3 = new ButtonBuilder()
       .setLabel("Resources")
       .setStyle(ButtonStyle.Link)
       .setURL(trevorprojresources)
@@ -63,7 +64,7 @@ module.exports = {
  const message = (await reply).resource.message 
       { message }    
 }
-
+console.log("command has been called")
     }
 
 }

@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("@discordjs/builders");
+const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
@@ -15,7 +15,7 @@ module.exports = {
 
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
-      const button = new ButtonKit()
+      const button = new ButtonBuilder()
       .setLabel("Click to join")
       .setStyle(ButtonStyle.Link)
       
@@ -49,6 +49,8 @@ module.exports = {
       })
  const message = (await reply).resource.message 
       { message }    
+
+      console.log("command has been called")
 }
    
           

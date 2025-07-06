@@ -33,5 +33,7 @@ module.exports = {
             })
         }
 
+        console.log("command has been called")
+
     }
 }

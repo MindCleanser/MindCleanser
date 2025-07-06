@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("@discordjs/builders");
+const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
 const { transLLWeb, transLLnum, transLLresources, transLLdonate } =require("../../config.json");
@@ -15,18 +15,18 @@ const { ButtonKit } = require("commandkit");
 
     run: async ({interaction, client, handler}) => {
         const hide = interaction.options.getBoolean("private")
-      const button = new ButtonKit()
+      const button = new ButtonBuilder()
       .setLabel("Trans Lifeline")
       .setStyle(ButtonStyle.Link)
       
       .setURL(transLLWeb)
 
-      const button2 = new ButtonKit()
+      const button2 = new ButtonBuilder()
       .setLabel("Trans Lifeline")
       .setStyle(ButtonStyle.Link)
       .setURL(transLLresources)
 
-      const button3 = new ButtonKit()
+      const button3 = new ButtonBuilder()
       .setLabel("Donate")
       .setStyle(ButtonStyle.Link)
       .setURL(transLLdonate)
@@ -63,5 +63,7 @@ const { ButtonKit } = require("commandkit");
  const message = (await reply).resource.message 
       { message }     
     }
+
+    console.log("command has been called")
 }
     }

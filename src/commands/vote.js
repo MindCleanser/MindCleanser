@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("@discordjs/builders");
+const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
@@ -15,13 +15,13 @@ module.exports = {
 
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
-      const button = new ButtonKit()
+      const button = new ButtonBuilder()
       .setLabel("Top.gg")
       .setStyle(ButtonStyle.Link)
       
       .setURL(vote)
 
-      const button2 = new ButtonKit()
+      const button2 = new ButtonBuilder()
       .setLabel("DiscordBotList")
       .setStyle(ButtonStyle.Link)
       .setURL(vote2)
@@ -56,7 +56,7 @@ module.exports = {
 }
    
           
-
+console.log("command has been called")
 
 
       

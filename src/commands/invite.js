@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("@discordjs/builders");
+const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
@@ -15,7 +15,7 @@ module.exports = {
 
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
-      const button = new ButtonKit()
+      const button = new ButtonBuilder()
       .setLabel("Invite me")
       .setStyle(ButtonStyle.Link)
       
@@ -51,7 +51,7 @@ module.exports = {
 }
    
           
-
+console.log("command has been called")
 
 
       

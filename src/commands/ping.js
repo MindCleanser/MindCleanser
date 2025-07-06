@@ -30,6 +30,10 @@ module.exports = {
             embeds: [embed]
         })
        }
+
+       console.log("command has been called")
     },
+
+
 };
        
