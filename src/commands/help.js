@@ -22,22 +22,22 @@ module.exports = {
         .setStyle(ButtonStyle.Link)
         .setURL(github)
 
-        const button2 = new ButtonKit()
+        const button2 = new ButtonBuilder()
         .setLabel("Bot invite")
         .setStyle(ButtonStyle.Link)
         .setURL(invite)
 
-        const button3 = new ButtonKit()
+        const button3 = new ButtonBuilder()
         .setLabel("Support server")
         .setStyle(ButtonStyle.Link)
         .setURL(discinv)
 
-        const button4 = new ButtonKit()
+        const button4 = new ButtonBuilder()
         .setLabel("Vote 1")
         .setStyle(ButtonStyle.Link)
         .setURL(vote)
 
-        const button5 = new ButtonKit()
+        const button5 = new ButtonBuilder()
         .setLabel("Vote 2")
         .setStyle(ButtonStyle.Link)
         .setURL(vote2)
