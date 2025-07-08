@@ -1,7 +1,7 @@
 {
     "token":"<your token here>",
     "invite": "https://discord.com/oauth2/authorize?client_id=<your app id here>&permissions=0&integration_type=0&scope=bot+applications.commands",
-    "discinv":"https://discord.gg/hyyMnz3enE",
+    "botid":"your bot id",
     "trevorprojweb":"https://www.thetrevorproject.org/",
     "trevorprojnum":"+1 (866)-488-7386",
     "trevorprojdonate":"https://give.thetrevorproject.org/campaign/699367/donate?c_src=UCGOF250603100&c_src2=dt-2025-c-EL-Campaign-website&utm_medium=fundraising&utm_source=websitebutton1&utm_campaign=emergencylifeline",
@@ -12,5 +12,14 @@
     "transLLnum": "+1 (877)-565-8860",
     "transLLresources": "https://translifeline.org/resources/",
     "transLLdonate": "https://give.translifeline.org/give/461718/#!/donation/checkout",
-    "vote":"https://top.gg/bot/1381126009792888902/vote"
+    "transLLthumb":"https://translifeline.org/wp-content/uploads/2023/01/TL-logo_purple_transparent.png",
+    "vote":"https://top.gg/bot/1381126009792888902/vote",
+    "vote2":"https://discordbotlist.com/bots/mindcleanser/upvote",
+
+    "dbltoken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0IjoxLCJpZCI6IjEzODExMjYwMDk3OTI4ODg5MDIiLCJpYXQiOjE3NTE1OTg0ODZ9.Hh_jfXVXGFwkD9ZLyEQbIfXB1cqCD--DDMpdqpGuHp0",
+    "topggtoken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib3QiOiJ0cnVlIiwiaWQiOiIxMzgxMTI2MDA5NzkyODg4OTAyIiwiaWF0IjoiMTc1MTYzNTY3MiJ9.XXVvTuC80fGGCwtnnX0cyxhkzK4Hfb18Npa89becKYw",
+    "namiweb":"https://nami.org",
+    "namidonate":"https://www.nami.org/get-involved/donate-to-nami/",
+    "namiedu":"https://www.nami.org/support-education/",
+    "namithumb":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxKNDidGEfOupNnMo74G3R7OOclPvxlYokDA&s"
 }
