@@ -1,12 +1,12 @@
 const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
-const { namiweb, namidonate, namiedu, namithumb, namiresources } =require("../../config.json");
+const { mhgadonate, mhgaweb } =require("../../config.json");
 const { ButtonKit } = require("commandkit");
     module.exports = {
     data: new SlashCommandBuilder()
-    .setName("nami")
-    .setDescription("Displays info on NAMI")
+    .setName("mhga")
+    .setDescription("Displays info on Mental Health Guided Allience")
     .addBooleanOption(option =>
         option.setName("private")
         .setDescription("Can others see this message?")
@@ -16,7 +16,7 @@ const { ButtonKit } = require("commandkit");
     run: async ({interaction, client, handler}) => {
         const hide = interaction.options.getBoolean("private")
       const button = new ButtonBuilder()
-      .setLabel("NAMI")
+      .setLabel("Mental Health ")
       .setStyle(ButtonStyle.Link)
       
       .setURL(namiweb)

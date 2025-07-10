@@ -9,6 +9,7 @@ module.exports = {
         option.setName("private")
         .setDescription("Can others see this message?")
         .setRequired(true)
+        
     ),
 
     run: async({interaction, client, handler}) => {
@@ -17,8 +18,10 @@ module.exports = {
         const latency = Math.round(interaction.client.ws.ping);
         const embed = new EmbedBuilder()
             .setTitle('Latency')
-            .setDescription(`${latency}ms`)
+            .setDescription(`${latency}`)
             .setColor(0x3498db); // Blue color
+            
+        
 
        if (hide == true) {
         await interaction.reply({
