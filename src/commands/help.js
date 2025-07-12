@@ -102,7 +102,7 @@ module.exports = {
                 textDisplay => textDisplay
                 .setContent("# __Vote__"),
                 textDisplay => textDisplay
-                .setContent("Click one of these buttons to vote for MindCleanser")
+                .setContent("## Click one of these buttons to vote for MindCleanser")
             )
             .addActionRowComponents(
                 actionrow => actionrow
