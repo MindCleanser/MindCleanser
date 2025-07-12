@@ -1,7 +1,7 @@
 const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
-const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
+const { SlashCommandBuilder, ButtonStyle, MessageFlags, ContainerBuilder } = require("discord.js");
 const { github, invite, discinv, vote, vote2 } = require("../../config.json");
 module.exports = {
     data: new SlashCommandBuilder()
@@ -17,43 +17,113 @@ module.exports = {
     run: async ({interaction, client, handler}) => {
 
         const hide = interaction.options.getBoolean("private")
-        const button = new ButtonBuilder()
-        .setLabel("Github")
-        .setStyle(ButtonStyle.Link)
-        .setURL(github)
+   
+   
+        const embed = new ContainerBuilder()
 
-        const button2 = new ButtonBuilder()
-        .setLabel("Bot invite")
-        .setStyle(ButtonStyle.Link)
-        .setURL(invite)
+        .addTextDisplayComponents(
+            textDisplay => textDisplay
+            .setContent("# __MindCleanser__"),
+            textDisplay => textDisplay
+            .setContent("## MindCleanser is a Discord bot that includes many resources pertaining to mental health. This bot has a private feature that also lets users send any resource specifically to themselves in a mnessage that only they can see because I know asking for mental help can be needlessly embarresing. This bot was coded in Discord.js by hand with absolutly no ai in any way")
+        )
 
-        const button3 = new ButtonBuilder()
-        .setLabel("Support server")
-        .setStyle(ButtonStyle.Link)
-        .setURL(discinv)
+        .addSeparatorComponents(
+            separator => separator
+        )
 
-        const button4 = new ButtonBuilder()
-        .setLabel("Vote 1")
-        .setStyle(ButtonStyle.Link)
-        .setURL(vote)
+        .addSectionComponents(
+            section => section
+            .addTextDisplayComponents(
+                textDisplay => textDisplay
+                .setContent("# __Github__"),
+                textDisplay => textDisplay
+                .setContent("## Click here to view the Github repo")
+            )
 
-        const button5 = new ButtonBuilder()
-        .setLabel("Vote 2")
-        .setStyle(ButtonStyle.Link)
-        .setURL(vote2)
+            .setButtonAccessory(
+                button => button
+                 .setLabel("Github")
+                 .setStyle(ButtonStyle.Link)
+                 .setURL(github)
+            )
+        )
 
-        const row = new ActionRowBuilder()
-        .addComponents(button, button2, button3, button4, button5)
+        .addSeparatorComponents(
+            separator => separator
+        )
 
-        const embed = new EmbedBuilder()
-        .setTitle("Info")
-        .setDescription("MindCleanser is a Discord bot that includes many resources pertaining to mental health. This bot has a private feature that also lets users send any resource specifically to themselves in a mnessage that only they can see because I know asking for mental help can be needlessly embarresing. This bot was coded in Discord.js by hand with absolutly no ai in any way") 
+        .addSectionComponents(
+            section => section
+            .addTextDisplayComponents(
+                textDisplay => textDisplay
+                .setContent("# __Bot Invite__"),
+                textDisplay => textDisplay
+                .setContent("Click here to invite the bot to your server or add it as a user app")
+            )
+
+            .setButtonAccessory(
+                button => button
+                .setLabel("Bot Invite")
+                .setStyle(ButtonStyle.Link)
+                .setURL(invite)
+            )
+        )
+
+        .addSeparatorComponents(
+            separator => separator
+
+        )
+
+        .addSectionComponents(
+            section => section
+
+            .addTextDisplayComponents(
+                textDisplay => textDisplay
+                .setContent("# __Support server__"),
+                textDisplay => textDisplay
+                .setContent("## Click here to join the support server (NOT a mental health support server)")
+            )
+
+            .setButtonAccessory(
+                button => button
+                .setLabel("Support server")
+                .setStyle(ButtonStyle.Link)
+                .setURL(discinv)
+                
+            ),
+        )
+
+        .addSeparatorComponents(
+            separator => separator
+    )
+
+             .addTextDisplayComponents(
+                textDisplay => textDisplay
+                .setContent("# __Vote__"),
+                textDisplay => textDisplay
+                .setContent("Click one of these buttons to vote for MindCleanser")
+            )
+            .addActionRowComponents(
+                actionrow => actionrow
+                .setComponents(
+                    new ButtonBuilder()
+                    .setLabel("Top.gg")
+                    .setStyle(ButtonStyle.Link)
+                    .setURL(vote),
+                    new ButtonBuilder()
+                    .setLabel("DiscordBotList")
+                    .setStyle(ButtonStyle.Link)
+                    .setURL(vote2)
+                )
+            )
+      
  
     if (hide == false) {
            const reply = interaction.reply({
         withResponse: true,
-        embeds: [embed],
-        components: [row],
+        components: [embed],
+        flags: MessageFlags.IsComponentsV2
         
       }) 
        const message = (await reply).resource.message 
@@ -61,9 +131,8 @@ module.exports = {
            const reply = interaction.reply({
 
         withResponse: true,
-        embeds: [embed],
-        components: [row],
-        flags:  MessageFlags.Ephemeral
+        components: [embed],
+        flags:  [MessageFlags.Ephemeral, MessageFlags.IsComponentsV2]
       })
  const message = (await reply).resource.message 
       { message }    

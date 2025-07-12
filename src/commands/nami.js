@@ -1,4 +1,4 @@
-const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
+const { EmbedBuilder, ButtonBuilder, ContainerBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
 const { namiweb, namidonate, namiedu, namithumb, namiresources } =require("../../config.json");
@@ -15,42 +15,104 @@ const { ButtonKit } = require("commandkit");
 
     run: async ({interaction, client, handler}) => {
         const hide = interaction.options.getBoolean("private")
-      const button = new ButtonBuilder()
-      .setLabel("NAMI")
-      .setStyle(ButtonStyle.Link)
-      
-      .setURL(namiweb)
+    
 
-      const button2 = new ButtonBuilder()
-      .setLabel("NAMI educational resources")
-      .setStyle(ButtonStyle.Link)
-      .setURL(namiedu)
+     const embed = new ContainerBuilder()
+     .addSectionComponents(
+      section => section
+      .addTextDisplayComponents(
+        textDisplay => textDisplay
+        .setContent("# __NAMI__"),
+        textDisplay => textDisplay
+        .setContent("## NAMI is a large collection of mental health resources on a variety of different topics including mens mental health resources")
+      )
+      .setThumbnailAccessory(
+        thumbnail => thumbnail
+        .setURL(namithumb)
+      )
+     )
 
-      const button3 = new ButtonBuilder()
+     .addSeparatorComponents(
+      separator => separator
+     )
+     .addSectionComponents(
+      section => section
+     .addTextDisplayComponents(
+      textDisplay => textDisplay
+      .setContent("# __Donate__"),
+      textDisplay => textDisplay
+      .setContent("## Click here to donate")
+     )
+
+     .setButtonAccessory(
+      button => button
       .setLabel("Donate")
       .setStyle(ButtonStyle.Link)
       .setURL(namidonate)
+     )
 
-      const button4 = new ButtonBuilder()
-      .setLabel("Resources")
-      .setStyle(ButtonStyle.Link)
-      .setURL(namiresources)
-      
-      const row = new ActionRowBuilder()
-      .addComponents(button, button2, button3, button4)
+     )
 
-     
+     .addSeparatorComponents(
+      separator => separator
+     )
 
-     const embed = new EmbedBuilder()
+     .addSeparatorComponents(
+      separator => separator
+     )
+
+     .addSectionComponents(
+      section => section
+      .addTextDisplayComponents(
+        textDisplay => textDisplay
+        .setContent("# __Resources__"),
+        textDisplay => textDisplay
+        .setContent("## Click here to view mental health resources")
+      )
+
+      .setButtonAccessory(
+        button => button
+        .setLabel("Resources")
+        .setStyle(ButtonStyle.Link)
+        .setURL(namiresources)
+      )
+
+     )
+
+     .addSeparatorComponents(
+      separator => separator
+     )
+
+     .addSectionComponents(
+      section => section
+
+      .addTextDisplayComponents(
+        textDisplay => textDisplay
+        .setContent("# __Website__"),
+        textDisplay => textDisplay
+        .setContent("## Click here to view NAMI's website")
+      )
+
+      .setButtonAccessory(
+        button => button
+        .setLabel("NAMI")
+        .setStyle(ButtonStyle.Link)
+        .setURL(namiweb)
+      )
+
+     )
+
+
+   /*  const embed = new EmbedBuilder()
       .setTitle("NAMI")
       .setDescription("NAMI is a large collection of mental health resources on a variety of different topics including mens mental health resources")
-      .setThumbnail(namithumb)
+      .setThumbnail(namithumb)*/
       
     if (hide == false) {
            const reply = interaction.reply({
         withResponse: true,
-        embeds: [embed],
-        components: [row],
+        components: [embed],
+        flags: MessageFlags.IsComponentsV2
         
       }) 
        const message = (await reply).resource.message 
@@ -58,9 +120,8 @@ const { ButtonKit } = require("commandkit");
            const reply = interaction.reply({
 
         withResponse: true,
-        embeds: [embed],
-        components: [row],
-        flags:  MessageFlags.Ephemeral
+        components: [embed],
+        flags:  [MessageFlags.Ephemeral, MessageFlags.IsComponentsV2]
       })
  const message = (await reply).resource.message 
       { message }     

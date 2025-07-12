@@ -1,7 +1,7 @@
 const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
-const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
+const { SlashCommandBuilder, ButtonStyle, MessageFlags, ContainerBuilder } = require("discord.js");
 const { discinv } =require("../../config.json")
 module.exports = {
     data: new SlashCommandBuilder()
@@ -16,26 +16,38 @@ module.exports = {
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
       const button = new ButtonBuilder()
-      .setLabel("Click to join")
-      .setStyle(ButtonStyle.Link)
-      
-      .setURL(discinv)
-      
-      const row = new ActionRowBuilder()
-      .addComponents(button)
+    
 
       
+      const embed = new ContainerBuilder()
 
-      const embed = new EmbedBuilder()
-      .setTitle("Click to join")
-      .setDescription("Click the button bellow to join the bot server to report bugs and suggest resources as well as get notified about bot updates and downtime (This is NOT a mental health support server)")
+      .addSectionComponents(
+        section => section
+        .addTextDisplayComponents(
+          textDisplay => textDisplay
+          .setContent("# __Support server__"),
+          textDisplay => textDisplay
+          .setContent("## Click here to join the support server (NOT a mental health support server)")
+        )
+
+        .setButtonAccessory(
+          button => button
+          .setLabel("Support Server")
+          .setStyle(ButtonStyle.Link)
+          .setURL(discinv)
+        )
+
+      )
+
+      
+    
       
 
     if (hide == false) {
            const reply = interaction.reply({
         withResponse: true,
-        embeds: [embed],
-        components: [row],
+        components: [embed],
+        flags: MessageFlags.IsComponentsV2
         
       }) 
        const message = (await reply).resource.message 
@@ -43,9 +55,8 @@ module.exports = {
            const reply = interaction.reply({
 
         withResponse: true,
-        embeds: [embed],
-        components: [row],
-        flags:  MessageFlags.Ephemeral
+        components: [embed],
+        flags:  [MessageFlags.Ephemeral, MessageFlags.IsComponentsV2]
       })
  const message = (await reply).resource.message 
       { message }    

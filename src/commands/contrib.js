@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, MessageFlags } = require("discord.js");
+const { SlashCommandBuilder, MessageFlags, ContainerBuilder } = require("discord.js");
 const { contrib } = require("../../contrib.json");
 const { EmbedBuilder } = require("discord.js");
 module.exports = {
@@ -17,19 +17,25 @@ module.exports = {
 
         
 
-        const embed = new EmbedBuilder()
-        .setTitle("Contributors")
-        .setDescription(contrib)
+        const embed = new ContainerBuilder()
+        .addTextDisplayComponents(
+            textDisplay => textDisplay
+            .setContent("# __Contributors__"),
+            textDisplay => textDisplay
+            .setContent(`${contrib}`)
+
+        )
        
 
-        if(hide == true) {
+        if(hide == false) {
             interaction.reply({
-                embeds: [embed],
-                flags: MessageFlags.Ephemeral
+                components: [embed],
+                flags: MessageFlags.IsComponentsV2
             }) 
         } else {
             interaction.reply({
-                embeds: [embed],
+                components: [embed],
+                flags: [MessageFlags.Ephemeral, MessageFlags.IsComponentsV2]
             })
         }
 

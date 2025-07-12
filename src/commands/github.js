@@ -1,8 +1,8 @@
 const { EmbedBuilder, ButtonBuilder } = require("@discordjs/builders");
 const { ActionRowBuilder } = require("@discordjs/builders");
 const { ButtonKit } = require("commandkit");
-const { SlashCommandBuilder, ButtonStyle, MessageFlags } = require("discord.js");
-const { invite } =require("../../config.json")
+const { SlashCommandBuilder, ButtonStyle, MessageFlags, ContainerBuilder } = require("discord.js");
+const { github } =require("../../config.json")
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("github")
@@ -15,27 +15,39 @@ module.exports = {
 
     run: async ({interaction}) => {
       const hide = interaction.options.getBoolean("private")
-      const button = new ButtonBuilder()
-      .setLabel("Github")
-      .setStyle(ButtonStyle.Link)
+   
       
-      .setURL("https://github.com/MindCleanser/MindCleanser")
+    
       
-      const row = new ActionRowBuilder()
-      .addComponents(button)
+     
 
      
 
-      const embed = new EmbedBuilder()
-      .setTitle("Github")
-      .setDescription("Click the button to view my source code")
+      const embed = new ContainerBuilder()
+      .addSectionComponents(
+        section => section
+        .addTextDisplayComponents(
+          textDisplay => textDisplay
+          .setContent("# __Github__"),
+          textDisplay => textDisplay
+          .setContent("## Click here to view the Github repo")
+        )
+
+        .setButtonAccessory(
+          button => button
+          .setLabel("Github")
+          .setStyle(ButtonStyle.Link)
+          .setURL(github)
+        )
+
+      )
       
 
     if (hide == false) {
            const reply = interaction.reply({
         withResponse: true,
-        embeds: [embed],
-        components: [row],
+        components: [embed],
+        flags: MessageFlags.IsComponentsV2
         
       }) 
        const message = (await reply).resource.message 
@@ -43,9 +55,8 @@ module.exports = {
            const reply = interaction.reply({
 
         withResponse: true,
-        embeds: [embed],
-        components: [row],
-        flags:  MessageFlags.Ephemeral
+        components: [embed],
+        flags:  [MessageFlags.Ephemeral, MessageFlags.IsComponentsV2]
       })
  const message = (await reply).resource.message 
       { message }    
