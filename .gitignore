@@ -35,3 +35,4 @@ lerna-debug.log*
 # other
 **/*.DS_Store
 src/app.js
+src/app/events/ready/logs.js
