@@ -1,0 +1,25 @@
+{
+  "name": "untitled folder 5",
+  "description": "A CommandKit project",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "commandkit dev",
+    "build": "commandkit build",
+    "start": "commandkit start"
+  },
+  "dependencies": {
+    "@top-gg/sdk": "^3.1.6",
+    "commandkit": "^1.0.0-dev.20250716125627",
+    "discord.js": "^14.21.0",
+    "discordbotlist": "^1.1.1",
+    "dotenv": "^17.2.0",
+    "topgg-autoposter": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "typescript": "^5.8.3"
+  }
+}

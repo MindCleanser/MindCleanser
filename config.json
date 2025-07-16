@@ -1,0 +1,26 @@
+{
+    "token":"<your token here>",
+    "invite": "https://discord.com/oauth2/authorize?client_id=1381126009792888902&permissions=0&integration_type=0&scope=bot+applications.commands",
+    "botid":"your bot id",
+    "trevorprojweb":"https://www.thetrevorproject.org/",
+    "trevorprojnum":"+1 (866)-488-7386",
+    "trevorprojdonate":"https://give.thetrevorproject.org/campaign/699367/donate?c_src=UCGOF250603100&c_src2=dt-2025-c-EL-Campaign-website&utm_medium=fundraising&utm_source=websitebutton1&utm_campaign=emergencylifeline",
+    "trevorprojresources":"https://www.thetrevorproject.org/resources/",
+    "trevorprojthumb":"https://imgs.search.brave.com/x3he7nTOEIjhOvV4cKxlE7C0M8Xsh_-P33Vy3IBoZgQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2xn/YnRxaWEtc2FuZGJv/eC9pbWFnZXMvZC9k/ZC9UaGVUcmV2b3JQ/cm9qZWN0LnBuZy9y/ZXZpc2lvbi9sYXRl/c3Qvc2NhbGUtdG8t/d2lkdGgtZG93bi8y/Njg_Y2I9MjAyMjAx/MTgyMTQxMzM",
+    "github":"https://github.com/MindCleanser/MindCleanser",
+    "transLLWeb":"https://translifeline.org/",
+    "transLLnum": "+1 (877)-565-8860",
+    "transLLresources": "https://translifeline.org/resources/",
+    "transLLdonate": "https://give.translifeline.org/give/461718/#!/donation/checkout",
+    "transLLthumb":"https://translifeline.org/wp-content/uploads/2023/01/TL-logo_purple_transparent.png",
+    "transLLtime":"https://translifeline.org/hotline/#:~:text=Trans%20Lifeline%E2%80%99s%20hotline%20operating,PM%20%E2%80%93%209%20PM%20Eastern",
+    "vote":"https://top.gg/bot/1381126009792888902/vote",
+    "vote2":"https://discordbotlist.com/bots/mindcleanser/upvote",
+
+    "topggtoken":"",
+    "namiweb":"https://nami.org",
+    "namidonate":"https://www.nami.org/get-involved/donate-to-nami/",
+    "namiresources":"https://www.nami.org/support-education/",
+    "namithumb":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxKNDidGEfOupNnMo74G3R7OOclPvxlYokDA&s",
+    "discinv":"https://discord.gg/hyyMnz3enE"
+}
