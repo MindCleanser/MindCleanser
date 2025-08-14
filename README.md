@@ -1,4 +1,4 @@
-# MindCleanser
+# __MindCleanser__
 
 <div align="center"><img alt="Discord" src="https://img.shields.io/discord/1351528196654497835?style=for-the-badge&logo=Discord&logoColor=white&label=Discord&color=5865F2">
 </div>
@@ -7,13 +7,13 @@
 # About MindCleanser
 MindCleanser is a mental health discord bot that allows users to send mental health resources either to the whole server or to themselves via ephemeral.
 
-# Self-hosting
+# __Self-hosting__
 
 1. Clone this repo
 2. Run ```npm i discord.js dotenv commandkit@dev```
 3. fill out .env.config and rename it to .env
 3. Run ```npx commandkit dev```
 
-# Contributing
+# __Contributing__
 
 See [CONTRIBUTING.md](https://github.com/MindCleanser/MindCleanser/blob/main/CONTRIBUTING.md)

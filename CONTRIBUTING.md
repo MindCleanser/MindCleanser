@@ -1,5 +1,5 @@
 
-/*__Contributing
+# __Contributing__
 
 If you would like to add to this project, please follow these guidelines:
 
