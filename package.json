@@ -11,6 +11,7 @@
     "start": "commandkit start"
   },
   "dependencies": {
+    "@commandkit/devtools": "^0.0.0-dev.20250726125141",
     "@top-gg/sdk": "^3.1.6",
     "commandkit": "^1.0.0-dev.20250716125627",
     "discord.js": "^14.21.0",
