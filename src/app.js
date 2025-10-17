@@ -1,7 +1,8 @@
 import { Client } from 'discord.js';
-
+import { spawn } from 'child_process';
 import { AutoPoster } from 'topgg-autoposter'
 import { Logger } from 'commandkit';
+
 
 process.loadEnvFile('./.env');
 
@@ -15,4 +16,5 @@ ap.on('posted', () => {
   Logger.info('Posted stats to Top.gg!')
 })
 
+spawn('npx', ['commandkit', 'dev'], { stdio: 'inherit', shell: true })
 export default client;
