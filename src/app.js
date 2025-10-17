@@ -21,7 +21,7 @@ spawn('npx', ['commandkit', 'build'], { stdio: 'inherit', shell: true })
 
 setTimeout(() => {
   spawn('npx', ['commandkit', 'start'], { stdio: 'inherit', shell: true})
-}, 1000)
+}, 10000)
 }
 
 build()
