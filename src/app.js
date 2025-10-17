@@ -16,5 +16,13 @@ ap.on('posted', () => {
   Logger.info('Posted stats to Top.gg!')
 })
 
-spawn('npx', ['commandkit', 'dev'], { stdio: 'inherit', shell: true })
+function build() {
+spawn('npx', ['commandkit', 'build'], { stdio: 'inherit', shell: true })
+
+setTimeout(() => {
+  spawn('npx', ['commandkit', 'start'], { stdio: 'inherit', shell: true})
+}, 1000)
+}
+
+build()
 export default client;
