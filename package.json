@@ -17,7 +17,6 @@
     "discord.js": "^14.21.0",
     "discordbotlist": "^1.1.1",
     "dotenv": "^17.2.0",
-    "promisify-child-process": "^4.1.2",
     "topgg-autoposter": "^2.0.2"
   },
   "devDependencies": {

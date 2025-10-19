@@ -17,7 +17,7 @@ ap.on('posted', () => {
 })
 
 
-spawn('npx', ['commandkit', 'dev'], { stdio: 'inherit', shell: true })
+spawn('npx', ['commandkit', 'start'], { stdio: 'inherit', shell: true })
 
 //spawn('npx', ['commandkit', 'start'], { stdio: 'inherit', shell: true })
 
