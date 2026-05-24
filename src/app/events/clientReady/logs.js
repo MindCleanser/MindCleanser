@@ -6,14 +6,18 @@ const shard = new ShardingManager("src/app.ts", { token: process.env.DISCORD_TOK
 /**
  * @param {import('discord.js').Client<true>} client
  */
-export default function log(client, shard) {
-client.user.setActivity({
-    name: (`in ${client.guilds.cache.size} servers`),
+export default function log(client, shard, Shard) {
+client.shard.fetchClientValues('guilds.cache.size')
+	.then(results => {
+		
+	client.user.setActivity({
+    name: ("in " + `${results.reduce((acc, guildCount) => acc + guildCount, 0)} servers`),
     type: ActivityType.Streaming,
     url:("https://www.twitch.tv/mindcleanser")
   })
-  
-	
+  })
+	.catch(console.error);
+
 
   /*client.user.setActivity({
     name: (`in ${client.guilds.cache.size} servers `),

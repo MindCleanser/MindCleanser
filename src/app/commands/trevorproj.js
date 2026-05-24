@@ -32,7 +32,7 @@
             textDisplay => textDisplay
             .setContent("# **__The Trevor Project__**"),
             textDisplay => textDisplay
-            .setContent("### The Trevor Project is a non-profit orginisation focused on supporting members of LGBTQIA+ youth. Their main goal is to prevent suicide amongst young members of the queer community. They also provide resources for LGBTQIA+ youth and their guardians")
+            .setContent(`### The Trevor Project is a non-profit orginisation focused on supporting members of LGBTQIA+ youth. Their main goal is to prevent suicide amongst young members of the queer community. They also provide resources for LGBTQIA+ youth and their guardians. LGBTQIA+ support can be recieved by calling ${trevorprojnum}`)
         )
 
         .setThumbnailAccessory(
@@ -85,8 +85,12 @@
             .setStyle(ButtonStyle.Link)
             .setURL(trevorprojweb)
             )
+            .addTextDisplayComponents(
+                textDisplay => textDisplay
+            .setContent("# **__The Trevor Project__**"),
 
         )
+    )
 
         .addSeparatorComponents(
             separator => separator

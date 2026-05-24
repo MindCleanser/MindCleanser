@@ -1,5 +1,5 @@
   import { ApplicationCommandOptionType, ButtonStyle, ContainerBuilder, MessageFlags, ButtonBuilder } from 'discord.js';
-const { transLLWeb, transLLnum, transLLresources, transLLdonate, transLLthumb, transLLtime } =require("../../../config.json");
+const { transLLweb, transLLnum, transLLresources, transLLdonate, transLLtime, transLLthumb} = require("../../../config.json")
     /**
      * @type {import('commandkit').CommandData}
      */
@@ -34,7 +34,7 @@ const { transLLWeb, transLLnum, transLLresources, transLLdonate, transLLthumb, t
 
   .setThumbnailAccessory(
     thumbnail => thumbnail
-    .setURL(transLLthumb)
+    .setURL("https://hubitality.org/wp-content/uploads/2025/03/Trans-Lifeline-Logo-Hubitality-Resource-Hub.png")
   )
 
 )
@@ -84,7 +84,7 @@ const { transLLWeb, transLLnum, transLLresources, transLLdonate, transLLthumb, t
       button => button
       .setLabel("Trans Lifeline")
       .setStyle(ButtonStyle.Link)
-      .setURL(transLLWeb)
+      .setURL(transLLweb)
     )
 
   ) 
